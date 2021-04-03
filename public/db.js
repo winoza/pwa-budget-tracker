@@ -15,6 +15,12 @@ if (!window.indexedDB) {
 let db;
 
 const request = indexedDB.open("budget", 1);
+request.onerror = function(event) {
+    console.log("Why didn't you allow my web app to use IndexedDB?!");
+  };
+  request.onsuccess = function(event) {
+    db = event.target.result;
+  };
 
 request.onupgradeneeded = ({ target }) => {
     const db = target.result;
@@ -39,31 +45,31 @@ saveRecord = (record) => {
     store.add(record);
 }
 
-checkDatabase = () => {
+function checkDatabase() {
     const transaction = db.transaction(["pending"], "readwrite");
     const store = transaction.objectStore("pending");
     const getAll = store.getAll();
-
-    getAll.onsucess = () => {
-        if (getAll.result.length > 0) {
-            fetch("/api/transaction/bulk", {
-              method: "POST",
-              body: JSON.stringify(getAll.result),
-              headers: {
-                Accept: "application/json, text/plain, */*",
-                "Content-Type": "application/json"
-              }
-            })
-            .then(response => {        
-              return response.json();
-            })
-            .then(() => {
-              const transaction = db.transaction(["pending"], "readwrite");
-              const store = transaction.objectStore("pending");
-              store.clear();
-            });
-        }
-    }
-}
+  
+    getAll.onsuccess = function() {
+      if (getAll.result.length > 0) {
+        fetch("/api/transaction/bulk", {
+          method: "POST",
+          body: JSON.stringify(getAll.result),
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json"
+          }
+        })
+        .then(response => {        
+          return response.json();
+        })
+        .then(() => {
+          const transaction = db.transaction(["pending"], "readwrite");
+          const store = transaction.objectStore("pending");
+          store.clear();
+        });
+      }
+    };
+  }
 
 window.addEventListener("online", checkDatabase);
