@@ -15,9 +15,12 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/pwa-budget-tracker", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/pwa-budget-tracker", 
+{
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true,
+  useCreateIndex: true 
 });
 
 // routes
