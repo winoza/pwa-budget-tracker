@@ -13,10 +13,10 @@
         "type": "image/png"
       }
     ],
-    "orientation": "portrait",
-    "display": "standalone",
-    "start_url": "/",
     "description": "An application that allows you to tracket your budget online or offine.",
-    "background_color": "#01579b",
+    "orientation": "portrait",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#005c9e",
     "theme_color": "#ffffff"
-  }
+}

@@ -65,3 +65,5 @@ checkDatabase = () => {
         }
     }
 }
+
+window.addEventListener("online", checkDatabase);
