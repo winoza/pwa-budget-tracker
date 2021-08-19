@@ -1,6 +1,5 @@
 # PWA Budget Tracker
-
-## Description
+Keeping track of your income and expenses is important for managing your finances and maintaining financial stability. Many budget tracking applications offer useful features such as connecting to bank accounts, goal setting, and categorization of expenses, however, some users may not want to use an app for working on their budget. For said users, they might want to check out PWA Budget Tracker!
 
 PWA Budget Tracker is a progressive web application designed to help you track your expenses on the go!
 
