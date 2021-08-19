@@ -16,3 +16,11 @@ Deployed live application: https://afternoon-castle-34288.herokuapp.com/
 
 ## Functionality
 Add or substract your transactions/expenses either offline or online! Offline transactions will still display upon input and the user's total will populate as soon as the user is brought back online.
+
+## Future Development
+* Option for users to create their own accounts through email and verification
+* Feature to categorize expenses
+* Feature to auto time stamp and auto save transactions
+* Feature to change dates and times of transactions
+* Option for users to archive or unarchive any selected transactions and create folders to store archives transactions
+* Fix calculations to include precise dollar amount
