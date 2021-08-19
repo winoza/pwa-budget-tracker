@@ -7,14 +7,12 @@ Users are able to input the type of transaction as well as its amount. A list of
 
 Deployed live application: https://afternoon-castle-34288.herokuapp.com/
 
-## Functionality
-
-Add or substract your transactions/expenses either offline or online! Offline transactions will still display upon input and the user's total will populate as soon as the user is brought back online.
-
 ## Technologies Used
-
 * Node.js
 * Express.js
 * MongoDB
 * Mongoose
 * IndexedDB
+
+## Functionality
+Add or substract your transactions/expenses either offline or online! Offline transactions will still display upon input and the user's total will populate as soon as the user is brought back online.
